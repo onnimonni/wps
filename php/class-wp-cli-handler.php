@@ -121,7 +121,7 @@ class Wp_Cli_Handler extends PlainTextHandler {
 
             // Add args, file and line
             if ( strstr($args, "\n") ) {
-                $template .= "(".self::print_depth(7)."%s";
+                $template .= "(".self::print_depth(9)."%s";
                 $template .= self::print_depth(5).")  "."%s:\033[33m%d\033[0m%s";
             } else {
                 $template .= "( %s )   %s:\033[33m%d\033[0m%s";
@@ -150,7 +150,7 @@ class Wp_Cli_Handler extends PlainTextHandler {
         return $response;
     }
 
-    static private function pretty_print_args($arguments, $depth = 3, $options = [] ) {
+    static private function pretty_print_args($arguments, $depth = 5, $options = [] ) {
         // Stop fast
         if ( ! $arguments || empty($arguments) ) { return ''; }
 
